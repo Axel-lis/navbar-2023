@@ -134,6 +134,13 @@
     color: #666;
     font-weight: 400;
   }
+    .usuario-info {
+      font-size: 12px;
+      width: 100%;
+  }
+  .usuario-info p{
+    width:100%;
+  }
   @media only screen and (max-width: 600px) {
     /* Estilos específicos para pantallas más pequeñas (por ejemplo, teléfonos) */
     body {
@@ -187,6 +194,14 @@
 }
 .header{
   margin-top:-50%;
+}
+.usuario-info li{
+  padding-left: 0% !important;
+  color: rgba(56, 47, 47, 0.6);
+  list-style-type: none;
+  font-weight: 600;
+  margin-bottom: 2%;
+  padding-bottom: 1%;
 }
   }
   
