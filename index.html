@@ -56,6 +56,13 @@
               <a href="#">Option 4</a>
               <!-- otras opciones-->
             </div>
+            <a href="#" class="nested-dropdown-trigger" data-target="misPrestamos" id="misPrestamos">Mis Prestamos</a>
+            <div class="nested-dropdown" id="misPrestamos-dropdown">
+              <!-- otras opciones-->
+              <a href="#">Option 5</a>
+              <a href="#">Option 6</a>
+              <!-- otras opciones-->
+            </div>
           </div>
         </li>
         <li class="navbar-dropdown">
@@ -103,22 +110,17 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
       $(document).ready(function () {
-        // Al hacer hover sobre el elemento con id=misTickets
-        $('#misTickets').hover(function () {
+        // Oculta todos los nested-dropdown al principio
+        $('.nested-dropdown').addClass('hidden');
+
+        // Al hacer hover sobre el elemento con class=nested-dropdown-trigger ...
+        $('.nested-dropdown-trigger').hover(function () {
           // Oculta todos los nested-dropdown
-          $('.nested-dropdown').hide();
+          $('.nested-dropdown').addClass('hidden');
 
-          // Muestra el nested-dropdown asociado a misTickets
-          $('#misTickets-dropdown').show();
+          // Muestra el nested-dropdown asociado al elemento hover
+          $(this).next('.nested-dropdown').removeClass('hidden');
         });
-
-        // Repite el mismo proceso para otros elementos
-        $('#misAcuses').hover(function () {
-          $('.nested-dropdown').hide();
-          $('#misAcuses-dropdown').show();
-        });
-
-        // Agregá más funciones hover según sea necesario si tenes más drops anidados
       });
     </script>
   </body>
