@@ -163,7 +163,7 @@ body {
   top: 0;
   left: 100%;
   width: 100%;
-  background-color: #fff;
+  background-color: #6f1ff3;
   box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
@@ -171,13 +171,31 @@ body {
   transition: 0.4s all;
 }
 .navbar-dropdown .nested-dropdown a {
-  color: #6f1ff3;
+  color: #fff;
 }
 
 .navbar-dropdown:hover .nested-dropdown {
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
+}
+/* Estilos para posicionar el dropdown de misAcuses */
+#misAcuses-dropdown {
+  position: absolute;
+  top: 0;
+  left: 100%; /* Coloca el dropdown a la derecha del elemento padre (misAcuses) */
+  margin-top: 3.5em; /* esto es lo que lo alinea con el titulo del dropdown */
+  display: none; /* Oculta inicialmente el dropdown */
+}
+
+/* Ajusta el ancho y otros estilos según sea necesario */
+#misAcuses-dropdown a {
+  width: 200px;
+}
+/* estilos mis tickets para alinearlo */
+
+.navbar-dropdown:hover .nested-dropdown#misTickets-dropdown {
+  top: 18px;
 }
 @media only screen and (max-width: 600px) {
   /* Estilos específicos para pantallas más pequeñas (por ejemplo, teléfonos) */
