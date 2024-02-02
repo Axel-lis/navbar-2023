@@ -1,97 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="AxelLis">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="AxelLis" />
     <title>Navbar</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <nav class="navbar">
-        <a href="#" class="navbar-logo">
-            <img src="LOGO-Pampeana.png" alt="logo" height="65px">
+      <a href="#" class="navbar-logo">
+        <img src="LOGO-Pampeana.png" alt="logo" height="65px" />
+      </a>
+      <ul class="navbar-links">
+        <li class="navbar-dropdown">
+          <a href="#">Cobros</a>
+          <div class="dropdown">
+            <a href="#">Leer comprobantes</a>
+            <a href="#">Adhesión a DAS </a>
+            <a href="#">Adición a Paquete Premium</a>
+            <a href="#">Canje de artículos </a>
+            <a href="#">Consulta de canjes </a>
+            <a href="#">Adhesión a prestamos</a>
+            <a href="#">Acuses de recibos</a>
+          </div>
+        </li>
+        <li class="navbar-dropdown">
+          <a href="#">Caja</a>
+          <div class="dropdown">
+            <a href="#">Informe de caja</a>
+            <a href="#">Egresos de caja</a>
+            <a href="#">Comprobante</a>
+          </div>
+        </li>
+        <li class="navbar-dropdown">
+          <a href="#">Tarjeta Pampeana</a>
+          <div class="dropdown">
+            <a href="#">Mis solicitudes</a>
+          </div>
+        </li>
+        <li class="navbar-dropdown" id="misProcesos">
+          <a href="#">Procesos</a>
+          <div class="dropdown">
+            <a href="#" class="nested-dropdown-trigger" data-target="misTickets" id="misTickets">Mis Tickets</a>
+            <div class="nested-dropdown" id="misTickets-dropdown">
+              <!-- Nested dropdown content -->
+              <a href="#">Option 1</a>
+              <a href="#">Option 2</a>
+              <!-- Add more options as needed -->
+            </div>
+            <a href="#" class="nested-dropdown-trigger" data-target="misAcuses" id="misAcuses">Mis Acuses</a>
+            <div class="nested-dropdown" id="misAcuses-dropdown">
+              <!-- Nested dropdown content -->
+              <a href="#">Option 3</a>
+              <a href="#">Option 4</a>
+              <!-- Add more options as needed -->
+            </div>
+          </div>
+        </li>
+        <li class="navbar-dropdown">
+          <a href="#">Objetivos</a>
+          <div class="dropdown">
+            <a href="#">Consulta de objetivos</a>
+          </div>
+        </li>
+        <li class="navbar-dropdown">
+          <a href="#">Datos</a>
+          <div class="dropdown">
+            <a href="#">Consultar Rechazos</a>
+            <a href="#">Resumen de tarjeta (nuevo) </a>
+          </div>
+        </li>
+        <li class="navbar-dropdown">
+          <a href="#">Claves</a>
+          <div class="dropdown">
+            <a href="#">Cambio de clave de acceso</a>
+          </div>
+        </li>
+        <li class="navbar-dropdown">
+          <a href="#">Salir</a>
+          <div class="dropdown">
+            <a href="#">Salir del sistema</a>
+          </div>
+        </li>
+      </ul>
+      <ul class="usuario-info">
+        <li style="padding-left: 25%; color: rgba(56, 47, 47, 0.6); list-style-type: none; font-weight: 600">
+          <p>Usuario: PUNTO 01 - Punto: (1 - CASA CENTRAL)</p>
+        </li>
+      </ul>
+    </nav>
 
-          </a>
-        <ul class="navbar-links">
-          <li class="navbar-dropdown">
-            <a href="#">Cobros</a>
-            <div class="dropdown">
-              <a href="#">Leer comprobantes</a>
-              <a href="#">Adhesión a DAS </a>
-              <a href="#">Adición a Paquete Premium</a>
-              <a href="#">Canje de artículos </a>
-              <a href="#">Consulta de canjes </a>
-              <a href="#">Adhesión a prestamos</a>
-              <a href="#">Acuses de recibos</a>
-            </div>
-          </li>
-          <li class="navbar-dropdown">
-            <a href="#">Caja</a>
-            <div class="dropdown">
-              <a href="#">Informe de caja</a>
-              <a href="#">Egresos de caja</a>
-              <a href="#">Comprobante</a>
-            </div>
-          </li>
-          <li class="navbar-dropdown">
-            <a href="#">Tarjeta Pampeana</a>
-            <div class="dropdown">
-              <a href="#">Mis solicitudes</a>
-            </div>
-          </li>
-          <li class="navbar-dropdown">
-            <a href="#">Procesos</a>
-            <div class="dropdown">
-              <a href="#">Mis Tickets</a>
+    <header class="header">
+      <div class="header-inner">
+        <h1>Tarjeta Pampeana Intranet</h1>
+        <form>
+          <input type="search" placeholder="Buscar por palabra clave" />
+          <div class="overlay"></div>
+        </form>
+      </div>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Al hacer hover sobre el elemento con id=misTickets
+        $('#misTickets').hover(function () {
+          // Oculta todos los nested-dropdown
+          $('.nested-dropdown').hide();
 
-            </div>
-          </li>
-          <li class="navbar-dropdown">
-            <a href="#">Objetivos</a>
-            <div class="dropdown">
-              <a href="#">Consulta de objetivos</a>
-            </div>
-          </li>
-          <li class="navbar-dropdown">
-            <a href="#">Datos</a>
-            <div class="dropdown">
-              <a href="#">Consultar Rechazos</a>
-              <a href="#">Resumen de tarjeta (nuevo) </a>
-            </div>
-          </li>
-          <li class="navbar-dropdown">
-            <a href="#">Claves</a>
-            <div class="dropdown">
-              <a href="#">Cambio de clave de acceso</a>
+          // Muestra el nested-dropdown asociado a misTickets
+          $('#misTickets-dropdown').show();
+        });
 
-            </div>
-          </li>
-          <li class="navbar-dropdown">
-            <a href="#">Salir</a>
-            <div class="dropdown">
-              <a href="#">Salir del sistema</a>
-            </div>
-          </li>
-        </ul>
-        <ul class="usuario-info">
-            <li style="    padding-left: 25%;
-            color: rgba(56, 47, 47, 0.6);
-            list-style-type: none; font-weight: 600;">
-                <p>Usuario: PUNTO 01 -  Punto: (1 - CASA CENTRAL)</p>
-            </li>
-        </ul>
-      </nav>
-  
-      <header class="header">
-          
-          <div class="header-inner">
-              <h1>Tarjeta Pampeana Intranet</h1>
-              <form>
-                  <input type="search" placeholder="Buscar por palabra clave" />
-                  <div class="overlay"></div>
-                </form>
-            </div>
-      </header>
-</body>
+        // Repite el mismo proceso para otros elementos según sea necesario
+        $('#misAcuses').hover(function () {
+          $('.nested-dropdown').hide();
+          $('#misAcuses-dropdown').show();
+        });
+
+        // Agrega más funciones hover según sea necesario para otros elementos
+      });
+    </script>
+  </body>
 </html>
