@@ -44,17 +44,17 @@
           <div class="dropdown">
             <a href="#" class="nested-dropdown-trigger" data-target="misTickets" id="misTickets">Mis Tickets</a>
             <div class="nested-dropdown" id="misTickets-dropdown">
-              <!-- Nested dropdown content -->
+              <!--otras opciones -->
               <a href="#">Option 1</a>
               <a href="#">Option 2</a>
-              <!-- Add more options as needed -->
+              <!-- otras opciones-->
             </div>
             <a href="#" class="nested-dropdown-trigger" data-target="misAcuses" id="misAcuses">Mis Acuses</a>
             <div class="nested-dropdown" id="misAcuses-dropdown">
-              <!-- Nested dropdown content -->
+              <!-- otras opciones-->
               <a href="#">Option 3</a>
               <a href="#">Option 4</a>
-              <!-- Add more options as needed -->
+              <!-- otras opciones-->
             </div>
           </div>
         </li>
@@ -112,13 +112,13 @@
           $('#misTickets-dropdown').show();
         });
 
-        // Repite el mismo proceso para otros elementos según sea necesario
+        // Repite el mismo proceso para otros elementos
         $('#misAcuses').hover(function () {
           $('.nested-dropdown').hide();
           $('#misAcuses-dropdown').show();
         });
 
-        // Agrega más funciones hover según sea necesario para otros elementos
+        // Agregá más funciones hover según sea necesario si tenes más drops anidados
       });
     </script>
   </body>
