@@ -5,13 +5,6 @@
 }
 
 body {
-  font-family: 'Lato', sans-serif;* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
   font-family: 'Lato', sans-serif;
 }
 
@@ -87,7 +80,7 @@ body {
   transition: 0.4s all;
 }
 .navbar-links li.navbar-dropdown .dropdown a {
-  padding-top: 18%;
+  padding-top: 0;
   padding-bottom: 10px;
   font-weight: 400;
 }
@@ -169,8 +162,7 @@ body {
   position: absolute;
   background-color: #6f1ff3;
   box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-radius: 8px;
   z-index: 111;
   transition: 0.4s all;
   width: 250px; /* Ancho fijo del nested-dropdown */
@@ -190,253 +182,6 @@ body {
   transform: translateY(0);
 }
 
-@media only screen and (max-width: 600px) {
-  /* Estilos específicos para pantallas más pequeñas (por ejemplo, teléfonos) */
-  body {
-    font-size: 14px;
-  }
-
-  .navbar {
-    flex-wrap: wrap;
-    padding: 0 10px;
-  }
-
-  .navbar-logo {
-    width: 100%; /* O el ancho deseado para la versión móvil */
-    text-align: center; /* Centra el contenido en la versión móvil */
-    padding: 10px 0; /* Ajusta el relleno según tus necesidades */
-  }
-
-  .navbar-links {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    list-style-type: none;
-  }
-
-  .navbar-links li {
-    flex: 1; /* Hace que los elementos ocupen el mismo espacio disponible */
-    text-align: center; /* Centra el texto en la versión móvil */
-  }
-
-  .navbar-links li a {
-    padding: 10px; /* Ajusta el relleno según tus necesidades */
-  }
-
-  .navbar-links li.navbar-dropdown {
-    position: relative;
-    flex: 1; /* Ajusta el espacio para los elementos con dropdown */
-  }
-
-  .navbar-links li.navbar-dropdown:hover .dropdown {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0px);
-    background-color: #6f1ff3;
-    width: 150px;
-  }
-  .header-inner h1 {
-    font-size: 28px;
-  }
-  .header-inner form input[type='search'] {
-    width: 90%;
-  }
-  .header {
-    margin-top: -50%;
-  }
-  .usuario-info li {
-    padding-left: 0% !important;
-    color: rgba(56, 47, 47, 0.6);
-    list-style-type: none;
-    font-weight: 600;
-    margin-bottom: 2%;
-    padding-bottom: 1%;
-  }
-}
-
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  z-index: -1;
-  opacity: 0;
-  transition: 1s all;
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  background-image: linear-gradient(to right top, #6f1ff3, #742bef, #7835ea, #7c3de6, #8045e1);
-  box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
-  position: relative;
-}
-.navbar-logo {
-  color: #fff !important;
-  text-decoration: none;
-  font-size: 25px;
-  padding: 0px 30px;
-  padding-left: 50px;
-}
-.navbar-logo img {
-  height: 45px;
-  width: 45px;
-}
-.navbar-links {
-  list-style-type: none;
-  display: flex;
-}
-.navbar-links li a {
-  display: block;
-  text-decoration: none;
-  color: #fff;
-  padding: 20px 20px;
-  font-weight: 700;
-  transition: 0.4s all;
-}
-
-.navbar-links li.navbar-dropdown {
-  position: relative;
-}
-
-.navbar-links li.navbar-dropdown:hover .dropdown {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0px);
-  background-color: #6f1ff3;
-}
-
-.navbar-links li.navbar-dropdown .dropdown {
-  visibility: hidden;
-  opacity: 0;
-  position: absolute;
-  padding: 20px 0;
-  top: 100%;
-  transform: translateY(50px);
-  left: 0;
-  width: 250px;
-  background-color: #fff;
-  box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  z-index: 111;
-  transition: 0.4s all;
-}
-.navbar-links li.navbar-dropdown .dropdown a {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-weight: 400;
-}
-.navbar-dropdown .dropdown a:hover {
-  padding-left: 30px;
-}
-.navbar-links li a:hover {
-  color: #00ff2f;
-}
-
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 90vh;
-  /* background-color: #f00; */
-  background-size: cover;
-}
-.header-inner {
-  text-align: center;
-  color: #6f1ff3;
-  text-shadow: 0px 10px 10px rgba(0, 0, 0, 0.8);
-}
-
-.header-inner h1 {
-  font-family: 'Lato', sans-serif;
-  font-size: 50px;
-  padding-bottom: 2rem;
-}
-
-.header-inner form input[type='search'] {
-  position: relative;
-  width: 500px;
-  border: none;
-  padding: 15px;
-  border-radius: 27px;
-  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.2);
-  z-index: 11;
-}
-.header-inner form input[type='search']:focus {
-  outline: none;
-}
-
-.header-inner form input[type='search']:focus + div {
-  z-index: 1;
-  opacity: 1;
-}
-
-::placeholder {
-  color: #666;
-  font-weight: 400;
-}
-.usuario-info {
-  font-size: 12px;
-  width: 100%;
-}
-.usuario-info p {
-  width: 100%;
-}
-/* Estilos para los nested-dropdown-trigger */
-.navbar-dropdown .nested-dropdown-trigger {
-  cursor: pointer;
-  display: block;
-  padding: 10px;
-  font-weight: 400;
-}
-
-/* Estilos para los nested-dropdown-trigger en hover */
-.navbar-dropdown .nested-dropdown-trigger:hover {
-  background-color: #6f1ff3;
-  color: #00ff2f;
-}
-
-/* Ajustes en los estilos de los nested-dropdown */
-.navbar-dropdown .nested-dropdown {
-  visibility: hidden;
-  opacity: 0;
-  position: absolute;
-  top: 18px;
-  left: 100%;
-  width: 100%;
-  background-color: #6f1ff3;
-  box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  z-index: 111;
-  transition: 0.4s all;
-}
-.navbar-dropdown .nested-dropdown a {
-  color: #fff;
-}
-/* Estilos para ocultar los nested-dropdown inicialmente */
-.navbar-dropdown .nested-dropdown.hidden {
-  display: none;
-}
-.navbar-dropdown:hover .nested-dropdown {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
-}
-/*nested por id para altura del contenedor */
-.navbar-dropdown .nested-dropdown#misAcuses-dropdown {
-  top: 60px;
-}
-.navbar-dropdown .nested-dropdown#misPrestamos-dropdown {
-  top: 90px;
-}
 @media only screen and (max-width: 600px) {
   /* Estilos específicos para pantallas más pequeñas (por ejemplo, teléfonos) */
   body {
