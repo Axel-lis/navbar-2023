@@ -81,7 +81,27 @@
         <li class="navbar-dropdown">
           <a href="#">Claves</a>
           <div class="dropdown">
-            <a href="#">Cambio de clave de acceso</a>
+            <a href="#" class="nested-dropdown-trigger" data-target="misTickets" id="misTickets">Cambio de clave</a>
+            <div class="nested-dropdown" id="misTickets-dropdown">
+              <!--otras opciones -->
+              <a href="#">Option 1</a>
+              <a href="#">Option 2</a>
+              <!-- otras opciones-->
+            </div>
+            <a href="#" class="nested-dropdown-trigger" data-target="misAcuses" id="misAcuses">Mis Acuses</a>
+            <div class="nested-dropdown" id="misAcuses-dropdown">
+              <!-- otras opciones-->
+              <a href="#">Option 3</a>
+              <a href="#">Option 4</a>
+              <!-- otras opciones-->
+            </div>
+            <a href="#" class="nested-dropdown-trigger" data-target="misPrestamos" id="misPrestamos">Mis Prestamos</a>
+            <div class="nested-dropdown" id="misPrestamos-dropdown">
+              <!-- otras opciones-->
+              <a href="#">Option 5</a>
+              <a href="#">Option 6</a>
+              <!-- otras opciones-->
+            </div>
           </div>
         </li>
         <li class="navbar-dropdown">
@@ -113,7 +133,7 @@
         // Oculta todos los nested-dropdown al principio
         $('.nested-dropdown').addClass('hidden');
 
-        // Al hacer hover sobre el elemento con class=nested-dropdown-trigger ...
+        // Al hacer hover sobre el elemento nested-dropdown-trigger ...
         $('.nested-dropdown-trigger').hover(function () {
           // Oculta todos los nested-dropdown
           $('.nested-dropdown').addClass('hidden');
@@ -122,12 +142,22 @@
           var nestedDropdown = $(this).next('.nested-dropdown');
           nestedDropdown.removeClass('hidden');
 
-          // Posiciona el nested-dropdown a la derecha del elemento hover con menos separación
-          var triggerWidth = $(this).width();
+          // Posiciona el nested-dropdown a la derecha o izquierda del elemento hover según sea necesario
           var triggerOffset = $(this).offset();
+          var parentOffset = nestedDropdown.parent().offset();
+          var nestedDropdownWidth = nestedDropdown.outerWidth();
+
+          // Calcula la posición y ajusta el valor según tus necesidades
+          var leftPosition = triggerOffset.left - parentOffset.left + $(this).outerWidth() + 10;
+
+          // Verifica si el nested-dropdown se ajusta mejor a la izquierda
+          if (leftPosition + nestedDropdownWidth > $(window).width()) {
+            leftPosition = triggerOffset.left - parentOffset.left - nestedDropdownWidth - 10;
+          }
+
           nestedDropdown.css({
-            left: triggerOffset.left - triggerWidth - 10 + 'px', // Ajusta el valor (-10) según tus necesidades
-            top: triggerOffset.top - 70 + 'px',
+            left: leftPosition + 'px',
+            top: triggerOffset.top - parentOffset.top + 'px',
           });
         });
       });
