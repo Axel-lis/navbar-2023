@@ -119,7 +119,16 @@
           $('.nested-dropdown').addClass('hidden');
 
           // Muestra el nested-dropdown asociado al elemento hover
-          $(this).next('.nested-dropdown').removeClass('hidden');
+          var nestedDropdown = $(this).next('.nested-dropdown');
+          nestedDropdown.removeClass('hidden');
+
+          // Posiciona el nested-dropdown a la derecha del elemento hover con menos separación
+          var triggerWidth = $(this).width();
+          var triggerOffset = $(this).offset();
+          nestedDropdown.css({
+            left: triggerOffset.left - triggerWidth - 10 + 'px', // Ajusta el valor (-10) según tus necesidades
+            top: triggerOffset.top - 70 + 'px',
+          });
         });
       });
     </script>
